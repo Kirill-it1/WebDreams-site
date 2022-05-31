@@ -1509,7 +1509,7 @@ body{
 		min-width: 290px;
 	}
 	.services__service{
-		min-width: inherit
+		min-width: 290px;
 	}
 	.about-top{
 		padding-top: 30px;
