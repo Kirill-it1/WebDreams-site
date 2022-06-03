@@ -240,6 +240,7 @@ body{
 	width: 100%;
 	min-height: 100px;
 	background: #4E4E4E;
+	z-index: 10000;
 }
 .header__container {
 	display: flex;
@@ -1048,6 +1049,7 @@ body{
 	display: flex;
 	flex-shrink: 0;
 	align-items: center;
+	padding: 0 50px;
 }
 .about-us__picture {
 	flex-shrink: 0;
@@ -1327,7 +1329,6 @@ body{
 @media screen and (max-width: 1231px) {
 	.header{
 		position: fixed;
-		z-index: 10;
 	}
 	.banner__container{
 		padding-top: 100px;

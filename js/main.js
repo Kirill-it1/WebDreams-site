@@ -15,7 +15,7 @@ burger.addEventListener('click', ()=>{
 });
 
 
-window.addEventListener('resize', itemWidth);
+
 let slider = document.querySelector('.slider'),
   sliderList = slider.querySelector('.slider__wrapper'),
   sliderTrack = slider.querySelector('.slider__track'),
@@ -23,7 +23,7 @@ let slider = document.querySelector('.slider'),
   arrows = slider.querySelector('.slider__btn'),
   prev = slider.querySelector('.slider__btn_prev'),
   next = slider.querySelector('.slider__btn_next'),
-  slideWidth = sliderList.offsetWidth - 1,
+  slideWidth = sliderList.offsetWidth,
   slideIndex = 0,
   posInit = 0,
   posX1 = 0,
@@ -43,9 +43,14 @@ let slider = document.querySelector('.slider'),
   swipeStartTime,
   swipeEndTime;
   itemWidth();
+  window.addEventListener('resize', itemWidth);
   function itemWidth() {
     slides.forEach((slide)=>{
-      slide.style.width = sliderList.offsetWidth+'px';
+      slideWidth = sliderList.offsetWidth;
+      slide.style.width = slideWidth+'px';
+      lastTrf = --slides.length * slideWidth;
+      posThreshold = slides[0].offsetWidth * 0.35;
+      sliderTrack.style.transform = `translate3d(-${slideIndex * slideWidth}px, 0px, 0px)`;
     });
   }
   let getEvent = function() {
@@ -66,6 +71,7 @@ let slider = document.querySelector('.slider'),
   }
   function swipeStart() {
     let evt = getEvent();
+
 
     if (allowSwipe && window.innerWidth<1200) {
 
