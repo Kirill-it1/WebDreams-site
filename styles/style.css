@@ -1038,7 +1038,7 @@ body{
 	background: #4A8780;
 }
 .slider__wrapper{
-	overflow: hidden;
+	overflow-x: hidden;
 	max-width: 974px;
 }
 .slider__track {
@@ -1049,7 +1049,7 @@ body{
 	display: flex;
 	flex-shrink: 0;
 	align-items: center;
-	padding: 0 50px;
+
 }
 .about-us__picture {
 	flex-shrink: 0;
@@ -1067,6 +1067,7 @@ body{
 	padding: 65px 86px 56px 66px;
 	z-index: 11;
 	margin-left: -20px;
+	margin-top: 48px;
 	border-radius: 20px;
 }
 .about-us__card::before {
@@ -1525,6 +1526,9 @@ body{
 	}
 	.about-down__title{
 		font-size: 30px;
+	}
+	.about-us__card::before {
+		left: 20px;
 	}
 	
 	.banner__button{
